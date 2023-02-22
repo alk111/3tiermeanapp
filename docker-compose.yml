@@ -1,0 +1,45 @@
+version: '3.9'
+
+services:
+ client:
+   build: ./client
+   ports:
+     - "8083:80"
+   networks:
+     - mean-network
+
+
+ server:
+   build: ./server
+   ports: 
+    - "8080:8080"
+#     - "1025:1025"
+   networks:
+      - mean-network
+#   mean-network:
+#      - database   
+#   links:
+#      - database
+
+ database:
+   image: mongo:4.2.23
+   volumes: 
+      - "mongo-volume:/data/db"
+   ports:
+      - "27017:27017"
+   networks:
+      - mean-network
+  
+   restart: unless-stopped
+
+networks:
+  mean-network:
+   driver: bridge
+   ipam:
+    config:
+     - subnet: 10.10.0.0/16
+
+
+volumes:
+   mongo-volume:
+      external: false
