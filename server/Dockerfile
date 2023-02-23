@@ -7,6 +7,9 @@ WORKDIR /app
 # Copy the package.json and package-lock.json files
 COPY package*.json ./
 
+ENV DB_CONNECTION = "mongodb://172.18.0.2:27017/"
+ENV SECRET_KEY = "ANY_RANDOM_STRING"
+ 
 # Install dependencies
 RUN npm install
 
