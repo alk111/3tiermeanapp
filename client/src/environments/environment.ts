@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseURL: 'https://meanbackend.azurewebsites.net/'
+  baseURL: ''
   
 };
 
