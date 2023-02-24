@@ -7,9 +7,9 @@ WORKDIR /app
 # Copy the package.json and package-lock.json files
 COPY package*.json ./
 
-ENV DB_CONNECTION = "mongodb://alkaif:password@mydbnetwork:27017/alkaifdb"
+ENV DB_CONNECTION "mongodb://alkaif:password@mydbnetwork:27017/alkaifdb"
 
-ENV SECRET_KEY = "ANY_RANDOM_STRING"
+ENV SECRET_KEY "ANY_RANDOM_STRING"
  
 # Install dependencies
 RUN npm install
