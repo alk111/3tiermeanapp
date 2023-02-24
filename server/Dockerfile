@@ -7,7 +7,7 @@ WORKDIR /app
 # Copy the package.json and package-lock.json files
 COPY package*.json ./
 
-ENV DB_CONNECTION = "mongodb://alkaif:password@mongodb:27017/alkaifdb?retryWrites=true&w=majority"
+ENV DB_CONNECTION = "mongodb://alkaif:password@mongodb:27017/alkaifdb"
 
 ENV SECRET_KEY = "ANY_RANDOM_STRING"
  
